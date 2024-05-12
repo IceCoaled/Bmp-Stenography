@@ -120,7 +120,7 @@ int main(int argc, char** argv)
 		}
 		else if (_getch() != NUM_THREE || _getch() != NUM_TWO || _getch() != NUM_ONE)
 		{
-			ERPRINT("Invalid Input, Must Be 1 Or 2")
+			ERPRINT("Invalid Input, Must Be 1 Or 2 Or 3")
 			std::this_thread::sleep_for(1000ms);
 			std::cout << "                                                  \r";
 			input = NULL;
