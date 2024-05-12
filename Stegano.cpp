@@ -141,7 +141,7 @@ bool Stegano::DataChecks()
 
 	if (Stegano::DIBHeader.get()->bV5BitCount != BIT_24)
 	{
-		EPRINT("Image Isnt 32Bit Or 24Bit, File Is Unsupported")
+		EPRINT("Image Isnt 24Bit, File Is Unsupported")
 		return false;
 	}
 	
