@@ -58,6 +58,12 @@ public:
 		strcpy_s(Stegano::fileName.data(), MAX_PATH, file.data());
 	}
 
+	~Stegano()
+	{
+		if (Stegano::readBmpFile.get()->is_open()) Stegano::readBmpFile.get()->close();
+		if (Stegano::writeBmpFile.get()->is_open()) Stegano::writeBmpFile.get()->close();
+	}
+
 	bool ImplantHiddenData(__in std::vector<std::uint8_t>& externalBuffer, __in std::size_t szExternalBuffer);
 	bool ExtractHiddenData(__in std::vector<std::uint8_t>& externalBuffer);
 
