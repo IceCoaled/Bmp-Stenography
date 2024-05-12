@@ -99,26 +99,26 @@ int main(int argc, char** argv)
 	std::cout << dye.yellow << "3) Extract\n\n" << dye.reset;
 
 	
-	while (input == NULL) 
+	while (true) 
 	{
 		input = _getch();
 
-		if (input == NUM_ONE)
+		if (_getch() == NUM_ONE)
 		{
 			userSelection = 1;
 			break;
 		}
-		else if (input == NUM_TWO)
+		else if (_getch() == NUM_TWO)
 		{
 			userSelection = 2;
 			break;
 		}
-		else if (input == NUM_THREE)
+		else if (_getch() == NUM_THREE)
 		{
 			userSelection = 3;
 			break;
 		}
-		else
+		else if (_getch() != NUM_THREE || _getch() != NUM_TWO || _getch() != NUM_ONE)
 		{
 			ERPRINT("Invalid Input, Must Be 1 Or 2")
 			std::this_thread::sleep_for(1000ms);
