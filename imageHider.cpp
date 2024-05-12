@@ -89,7 +89,7 @@ int main(int argc, char** argv)
 		steg = std::make_unique<Stegano>(imageFilePath);
     }
 
-	auto input = 0;
+	
 	int userSelection = 0;
 	
 	SPRINT("Please Select To >>Implant<< Or >>Extract<<")
