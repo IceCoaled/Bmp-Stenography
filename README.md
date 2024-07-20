@@ -1,3 +1,6 @@
+7/20/2024 UPDATE: realized i forgot to add the filter files, sorry to anyone who previously saw this repo but couldn't build it. 
+they have been added
+
 This is a small PoC for stenography, it only allows for 24bit images. However they can be padded or unpadded.
 You can hide shellcode or a portable exectuable.
 
