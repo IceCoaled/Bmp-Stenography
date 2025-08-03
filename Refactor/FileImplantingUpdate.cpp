@@ -136,6 +136,7 @@ void SuccessReset()
 [[noreturn]] inline void ErrorClose( const char* msg )
 {
 	Console::Error( msg );
+	HandleError( std::runtime_error( msg ) );
 	Console::Menu( "Exiting application..." );
 	std::this_thread::sleep_for( 2s );
 	ResetGlobals();
@@ -308,10 +309,7 @@ int HandleCommandLine( char** argV )
 
 	if ( userInput != 'i' && userInput != 'e' && userInput != 'I' && userInput != 'E' )
 	{
-		Console::Error( "Invalid first argument, must be 'i' for implant or 'e' for extract" );
-		HandleError( std::runtime_error( "Invalid first argument" ) );
-		std::this_thread::sleep_for( 2s );
-		return EXIT_FAILURE;
+		ErrorClose( "Invalid first argument, must be 'i' for implant or 'e' for extract" );
 	}
 
 	if ( userInput == 'i' || userInput == 'I' )
@@ -321,18 +319,12 @@ int HandleCommandLine( char** argV )
 
 		if ( VerifyFileExtension<BYTECODER>( byteCodeRFile ) != BYTECODER )
 		{
-			Console::Error( "Invalid bytecode file extension, must be .txt, .bin, .file or .dat" );
-			HandleError( std::runtime_error( "Invalid bytecode file extension" ) );
-			std::this_thread::sleep_for( 2s );
-			return EXIT_FAILURE;
+			ErrorClose( "Invalid bytecode file extension, must be .txt, .bin, .file or .dat" );
 		}
 
 		if ( cmdLineSelect = VerifyFileExtension<IMPLANT>( implantFile ); cmdLineSelect == INVALID )
 		{
-			Console::Error( "Invalid implant file extension, must be .bmp or .wav" );
-			HandleError( std::runtime_error( "Invalid implant file extension" ) );
-			std::this_thread::sleep_for( 2s );
-			return EXIT_FAILURE;
+			ErrorClose( "Invalid implant file extension, must be .bmp or .wav" );
 		}
 
 		byteReader = std::make_unique<FileReader>( byteCodeRFile );
@@ -358,18 +350,12 @@ int HandleCommandLine( char** argV )
 
 		if ( cmdLineSelect = VerifyFileExtension<EXTRACT>( implantFile ); cmdLineSelect == INVALID )
 		{
-			Console::Error( "Invalid implant file extension, must be .bmp or .wav" );
-			HandleError( std::runtime_error( "Invalid implant file extension" ) );
-			std::this_thread::sleep_for( 2s );
-			return EXIT_FAILURE;
+			ErrorClose( "Invalid implant file extension, must be .bmp or .wav" );
 		}
 
 		if ( VerifyFileExtension<BYTECODEW>( byteCodeWFile ) != BYTECODEW )
 		{
-			Console::Error( "Invalid bytecode file extension, must be .txt, .bin, .file or .dat" );
-			HandleError( std::runtime_error( "Invalid bytecode file extension" ) );
-			std::this_thread::sleep_for( 2s );
-			return EXIT_FAILURE;
+			ErrorClose( "Invalid bytecode file extension, must be .txt, .bin, .file or .dat" );
 		}
 
 		if ( cmdLineSelect == BMP )
