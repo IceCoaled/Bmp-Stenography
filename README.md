@@ -28,6 +28,7 @@ included if people want to make changes to accept other formats.
 I have added a log file for error outputs. If anything fails it will print to the console then the logfile and exit the program,
 the log file is created in the same directory as the program.
 
+# Format Note
 the formatting of the byte code used for implanting data HASN'T changed it must be as followed in the image below. I.E '0xFF' or 'FF'.
 ![Screenshot 2024-05-12 092208](https://github.com/Eremetic/Bmp-Stenography/assets/146580877/716c81f4-70af-42ab-908d-8e96238498af)
 
