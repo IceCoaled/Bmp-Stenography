@@ -5,9 +5,9 @@ Console header to be a lot easier, better and use the newer print functions.
 
 ### Command Line Update
 - Ive added command line functionality, the arguments are as followed
-- [i/e/h] -filepath -filepath <- general format
-- [i] -bytecode input file -implant file <- Implant data
-- [e] -implanted file -bytecode output file <- Extract data
+- [i/e/h] &lt;filepath&gt; &lt;filepath&gt; <- general format
+- [i] &lt;bytecode input file&gt; &lt;implant file&gt; <- Implant data
+- [e] &lt;implanted file&gt; &lt;bytecode output file&gt; <- Extract data
 - [h] <- show commands
 
 # Performace Update
