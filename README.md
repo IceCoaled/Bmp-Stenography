@@ -3,12 +3,12 @@ I Have made a full code base refactor on this repo. This includes the use of new
 .bmp stenography updates, ive added .wav stenography, and command line parsing. Ive also reworked the 
 Console header to be a lot easier, better and use the newer print functions.
 
-# Command Line Update
-Ive added command line functionality, the arguments are as followed
-[i/e/h] <file path> <file path> <- general format
-[i] <bytecode input file> <implant file> <- Implant data
-[e] <implanted file> <bytecode output file> <- Extract data
-[h] <- show commands
+### Command Line Update
+-Ive added command line functionality, the arguments are as followed
+-[i/e/h] <file path> <file path> <- general format
+-[i] <bytecode input file> <implant file> <- Implant data
+-[e] <implanted file> <bytecode output file> <- Extract data
+-[h] <- show commands
 
 # Performace Update
 Using std::span to wrap the file data, this removes unwanted copying and moving of the underlying vector used to 
